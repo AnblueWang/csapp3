@@ -1,0 +1,13 @@
+
+ctarget.l3.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <.text>:
+   0:	bf 04 44 60 00       	mov    $0x604404,%edi
+   5:	67 c7 07 35 39 62 39 	movl   $0x39623935,(%edi)
+   c:	67 c7 47 04 39 37 66 	movl   $0x61663739,0x4(%edi)
+  13:	61 
+  14:	67 c6 47 08 00       	movb   $0x0,0x8(%edi)
+  19:	c3                   	retq   
