@@ -1,0 +1,252 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 29.41      0.05     0.05  1074108     0.00     0.00  add_block
+ 17.65      0.08     0.03                             add_range
+ 11.76      0.10     0.02   102612     0.00     0.00  delete_free_block
+ 11.76      0.12     0.02                             remove_range
+  5.88      0.13     0.01  1073976     0.00     0.00  delete_block
+  5.88      0.14     0.01   971364     0.00     0.00  delete_block_list
+  5.88      0.15     0.01   480672     0.00     0.00  place
+  5.88      0.16     0.01   451422     0.00     0.00  coalesce
+  5.88      0.17     0.01    50724     0.00     0.00  extend_heap
+  0.00      0.17     0.00   971496     0.00     0.00  add_block_list
+  0.00      0.17     0.00   480672     0.00     0.00  findfit
+  0.00      0.17     0.00   400698     0.00     0.00  mm_malloc
+  0.00      0.17     0.00   399870     0.00     0.00  mm_free
+  0.00      0.17     0.00    95980     0.00     0.00  mm_realloc
+  0.00      0.17     0.00    12744     0.00     0.00  find_parent
+  0.00      0.17     0.00      110     0.00     1.09  eval_mm_speed
+  0.00      0.17     0.00      110     0.00     0.00  mm_init
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 5.88% of 0.17 seconds
+
+index % time    self  children    called     name
+                0.00    0.12     110/110         ftimer_gettod [2]
+[1]     70.6    0.00    0.12     110         eval_mm_speed [1]
+                0.00    0.06  399870/400698      mm_malloc [3]
+                0.01    0.04  399870/451422      coalesce [4]
+                0.00    0.01   95980/95980       mm_realloc [13]
+                0.00    0.00     110/110         mm_init [14]
+                0.00    0.00  399870/399870      mm_free [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     70.6    0.00    0.12                 ftimer_gettod [2]
+                0.00    0.12     110/110         eval_mm_speed [1]
+-----------------------------------------------
+                0.00    0.00     828/400698      mm_realloc [13]
+                0.00    0.06  399870/400698      eval_mm_speed [1]
+[3]     37.7    0.00    0.06  400698         mm_malloc [3]
+                0.01    0.04  480672/480672      place [6]
+                0.01    0.00   50592/50724       extend_heap [12]
+                0.00    0.00   50592/451422      coalesce [4]
+                0.00    0.00  480672/480672      findfit [16]
+-----------------------------------------------
+                0.00    0.00     132/451422      mm_init [14]
+                0.00    0.00     828/451422      mm_realloc [13]
+                0.00    0.00   50592/451422      mm_malloc [3]
+                0.01    0.04  399870/451422      eval_mm_speed [1]
+[4]     31.1    0.01    0.04  451422         coalesce [4]
+                0.02    0.00  531396/1074108     add_block [5]
+                0.00    0.01  486456/1073976     delete_block [7]
+                0.00    0.00  459228/971496      add_block_list [15]
+-----------------------------------------------
+                0.00    0.00  106848/1074108     mm_realloc [13]
+                0.02    0.00  435864/1074108     place [6]
+                0.02    0.00  531396/1074108     coalesce [4]
+[5]     29.4    0.05    0.00 1074108         add_block [5]
+-----------------------------------------------
+                0.01    0.04  480672/480672      mm_malloc [3]
+[6]     28.3    0.01    0.04  480672         place [6]
+                0.02    0.00  435864/1074108     add_block [5]
+                0.00    0.01  480672/1073976     delete_block [7]
+                0.00    0.00  405972/971496      add_block_list [15]
+-----------------------------------------------
+                0.00    0.00  106848/1073976     mm_realloc [13]
+                0.00    0.01  480672/1073976     place [6]
+                0.00    0.01  486456/1073976     coalesce [4]
+[7]     23.5    0.01    0.03 1073976         delete_block [7]
+                0.02    0.00  102612/102612      delete_free_block [9]
+                0.01    0.00  971364/971364      delete_block_list [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]     17.6    0.03    0.00                 add_range [8]
+-----------------------------------------------
+                0.02    0.00  102612/102612      delete_block [7]
+[9]     11.8    0.02    0.00  102612         delete_free_block [9]
+                0.00    0.00   12744/12744       find_parent [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]    11.8    0.02    0.00                 remove_range [10]
+-----------------------------------------------
+                               24504             delete_block_list [11]
+                0.01    0.00  971364/971364      delete_block [7]
+[11]     5.9    0.01    0.00  971364+24504   delete_block_list [11]
+                               24504             delete_block_list [11]
+-----------------------------------------------
+                0.00    0.00     132/50724       mm_init [14]
+                0.01    0.00   50592/50724       mm_malloc [3]
+[12]     5.9    0.01    0.00   50724         extend_heap [12]
+-----------------------------------------------
+                0.00    0.01   95980/95980       eval_mm_speed [1]
+[13]     5.4    0.00    0.01   95980         mm_realloc [13]
+                0.00    0.00  106848/1074108     add_block [5]
+                0.00    0.00  106848/1073976     delete_block [7]
+                0.00    0.00     828/400698      mm_malloc [3]
+                0.00    0.00     828/451422      coalesce [4]
+                0.00    0.00  106296/971496      add_block_list [15]
+-----------------------------------------------
+                0.00    0.00     110/110         eval_mm_speed [1]
+[14]     0.0    0.00    0.00     110         mm_init [14]
+                0.00    0.00     132/50724       extend_heap [12]
+                0.00    0.00     132/451422      coalesce [4]
+-----------------------------------------------
+                0.00    0.00  106296/971496      mm_realloc [13]
+                0.00    0.00  405972/971496      place [6]
+                0.00    0.00  459228/971496      coalesce [4]
+[15]     0.0    0.00    0.00  971496         add_block_list [15]
+-----------------------------------------------
+                0.00    0.00  480672/480672      mm_malloc [3]
+[16]     0.0    0.00    0.00  480672         findfit [16]
+-----------------------------------------------
+                0.00    0.00  399870/399870      eval_mm_speed [1]
+[17]     0.0    0.00    0.00  399870         mm_free [17]
+-----------------------------------------------
+                0.00    0.00   12744/12744       delete_free_block [9]
+[18]     0.0    0.00    0.00   12744         find_parent [18]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [5] add_block               [9] delete_free_block      [14] mm_init
+  [15] add_block_list          [1] eval_mm_speed (mdriver.c) [3] mm_malloc
+   [8] add_range (mdriver.c)  [12] extend_heap            [13] mm_realloc
+   [4] coalesce               [18] find_parent             [6] place
+   [7] delete_block           [16] findfit                [10] remove_range (mdriver.c)
+  [11] delete_block_list      [17] mm_free
